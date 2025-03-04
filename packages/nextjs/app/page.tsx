@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             onClick={() =>
               writeContract({
                 abi: YOUR_CONTRACT_ABI,
-                address: "0x285649b8140cF63DB87170B431042Fdc84AC747F",
+                address: "0xD64e4eC77812901a8b63826CA266f4C0D23f81c5",
                 functionName: "eatGasAndFail",
                 args: [1n],
               })
