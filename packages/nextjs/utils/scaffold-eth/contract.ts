@@ -23,11 +23,13 @@ import {
   WriteContractErrorType,
 } from "viem";
 import { Config, UseReadContractParameters, UseWatchContractEventParameters, UseWriteContractParameters } from "wagmi";
-import { WriteContractParameters, WriteContractReturnType } from "wagmi/actions";
+import { simulateContract, WriteContractParameters, WriteContractReturnType } from "wagmi/actions";
 import { WriteContractVariables } from "wagmi/query";
 import deployedContractsData from "~~/contracts/deployedContracts";
 import externalContractsData from "~~/contracts/externalContracts";
 import scaffoldConfig from "~~/scaffold.config";
+import { getParsedError } from "./getParsedError";
+import { notification } from "./notification";
 
 type AddExternalFlag<T> = {
   [ChainId in keyof T]: {
@@ -328,3 +330,19 @@ export type UseScaffoldEventHistoryData<
   | undefined;
 
 export type AbiParameterTuple = Extract<AbiParameter, { type: "tuple" | `tuple[${string}]` }>;
+
+export const simulateContractWriteAndNotifyError = async ({
+  wagmiConfig,
+  writeContractParams: params,
+}: {
+  wagmiConfig: Config;
+  writeContractParams: WriteContractVariables<Abi, string, any[], Config, number>;
+}) => {
+  try {
+    await simulateContract(wagmiConfig, params);
+  } catch (error) {
+    const parsedError = getParsedError(error);
+    notification.error(parsedError);
+    throw error;
+  }
+};

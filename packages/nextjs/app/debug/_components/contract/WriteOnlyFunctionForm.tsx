@@ -16,6 +16,8 @@ import {
 import { IntegerInput } from "~~/components/scaffold-eth";
 import { useTransactor } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
+import { wagmiConfig } from "~~/services/web3/wagmiConfig";
+import { simulateContractWriteAndNotifyError } from "~~/utils/scaffold-eth/contract";
 
 type WriteOnlyFunctionFormProps = {
   abi: Abi;
@@ -52,6 +54,17 @@ export const WriteOnlyFunctionForm = ({
             args: getParsedContractFunctionArgs(form),
             value: BigInt(txValue),
           });
+        await simulateContractWriteAndNotifyError({
+          wagmiConfig,
+          writeContractParams: {
+            address: contractAddress,
+            functionName: abiFunction.name,
+            abi: abi,
+            args: getParsedContractFunctionArgs(form),
+            value: BigInt(txValue),
+          },
+        });
+
         await writeTxn(makeWriteWithParams);
         onChange();
       } catch (e: any) {
