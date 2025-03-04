@@ -5,13 +5,7 @@ export const YOUR_CONTRACT_ABI = [
     stateMutability: "nonpayable",
   },
   { type: "receive", stateMutability: "payable" },
-  {
-    type: "function",
-    name: "eatGasAndFail",
-    inputs: [{ name: "_iterations", type: "uint256", internalType: "uint256" }],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
+  { type: "function", name: "eatGasAndFail", inputs: [], outputs: [], stateMutability: "nonpayable" },
   {
     type: "function",
     name: "greeting",
