@@ -11,21 +11,32 @@ export type ScaffoldConfig = {
 
 export const DEFAULT_ALCHEMY_API_KEY = "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
 
-const monadTestnet = defineChain({
-  id: 10143,
+export const monadTestnet = /*#__PURE__*/ defineChain({
+  id: 10_143,
   name: "Monad Testnet",
-  nativeCurrency: { name: "MON", symbol: "MON", decimals: 18 },
+  nativeCurrency: {
+    name: "Testnet MON Token",
+    symbol: "MON",
+    decimals: 18,
+  },
   rpcUrls: {
     default: {
-      http: ["https://testnet-rpc.monad.xyz/"],
+      http: ["https://testnet-rpc.monad.xyz"],
     },
   },
   blockExplorers: {
     default: {
-      name: "Monad Testnet BlockVision",
-      url: "https://sourcify-api-monad.blockvision.org",
+      name: "Monad Testnet explorer",
+      url: "https://testnet.monadexplorer.com",
     },
   },
+  contracts: {
+    multicall3: {
+      address: "0xcA11bde05977b3631167028862bE2a173976CA11",
+      blockCreated: 251449,
+    },
+  },
+  testnet: true,
 });
 
 const scaffoldConfig = {
