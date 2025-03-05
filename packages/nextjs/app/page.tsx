@@ -2,12 +2,10 @@
 
 import { WriteOnlyFunctionForm } from "./debug/_components/contract/WriteOnlyFunctionForm";
 import type { NextPage } from "next";
-import { useAccount, useWriteContract } from "wagmi";
+import { useWriteContract } from "wagmi";
 import { YOUR_CONTRACT_ABI } from "~~/utils/abi";
 
 const Home: NextPage = () => {
-  const { address: connectedAddress } = useAccount();
-
   const { writeContract } = useWriteContract();
 
   return (
