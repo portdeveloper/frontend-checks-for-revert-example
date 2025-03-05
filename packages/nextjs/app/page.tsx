@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="w-full flex flex-col items-center p-4">
-        <h1 className="text-4xl font-bold text-white mb-4">Simulate contract calls before sending them to the user</h1>
+        <h1 className="text-4xl font-bold mb-4">Simulate contract calls before sending them to the user</h1>
         <a
           href="https://testnet.monadexplorer.com/address/0xD64e4eC77812901a8b63826CA266f4C0D23f81c5"
           target="_blank"
