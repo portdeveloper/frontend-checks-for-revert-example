@@ -44,12 +44,12 @@ export const SimulateExample = () => {
         throws an error and sends a toast notif to the user.
       </p>
       <a
-        href="https://wagmi.sh/core/api/actions/simulateContract#simulatecontract"
+        href="https://viem.sh/docs/contract/simulateContract#simulatecontract"
         target="_blank"
         rel="noopener noreferrer"
         className="link mb-4"
       >
-        Wagmi simulateContract Documentation
+        viem simulateContract Documentation
       </a>
       <button className="btn btn-secondary btn-sm" onClick={handleWriteContract}>
         Send 💸
