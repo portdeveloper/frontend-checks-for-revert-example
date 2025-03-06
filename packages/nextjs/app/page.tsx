@@ -20,6 +20,14 @@ const Home: NextPage = () => {
         >
           See the contract on Monad Explorer
         </a>
+        <a
+          href="https://github.com/portdeveloper/frontend-checks-for-revert-example"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link"
+        >
+          See the repo on GitHub
+        </a>
       </div>
       <div className="flex w-full min-h-screen">
         <div className="w-1/2 bg-red-500 p-4 flex flex-col gap-4">
