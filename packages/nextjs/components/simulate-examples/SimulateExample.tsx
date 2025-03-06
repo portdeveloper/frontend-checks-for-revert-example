@@ -1,4 +1,4 @@
-import { usePublicClient, useSimulateContract, useWriteContract } from "wagmi";
+import { useWriteContract } from "wagmi";
 import { simulateContract } from "wagmi/actions";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
 import { YOUR_CONTRACT_ABI } from "~~/utils/abi";

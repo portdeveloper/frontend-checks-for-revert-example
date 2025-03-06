@@ -1,10 +1,8 @@
 "use client";
 
-import { WriteOnlyFunctionForm } from "./debug/_components/contract/WriteOnlyFunctionForm";
 import type { NextPage } from "next";
 import { NoSimulateExample } from "~~/components/simulate-examples/NoSimulateExample";
 import { SimulateExample } from "~~/components/simulate-examples/SimulateExample";
-import { YOUR_CONTRACT_ABI } from "~~/utils/abi";
 
 const Home: NextPage = () => {
   return (
