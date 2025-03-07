@@ -61,3 +61,6 @@ export const YOUR_CONTRACT_ABI = [
     anonymous: false,
   },
 ] as const;
+
+export const CONTRACT_ADDRESS = "0xD64e4eC77812901a8b63826CA266f4C0D23f81c5";
+export const FUNCTION_NAME = "eatGasAndFail";

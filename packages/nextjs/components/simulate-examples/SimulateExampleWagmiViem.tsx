@@ -1,14 +1,11 @@
 import { useWriteContract } from "wagmi";
 import { simulateContract } from "wagmi/actions";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
-import { YOUR_CONTRACT_ABI } from "~~/utils/abi";
+import { CONTRACT_ADDRESS, FUNCTION_NAME, YOUR_CONTRACT_ABI } from "~~/utils/abi";
 import { getParsedError } from "~~/utils/scaffold-eth/getParsedError";
 import { notification } from "~~/utils/scaffold-eth/notification";
 
-const CONTRACT_ADDRESS = "0xD64e4eC77812901a8b63826CA266f4C0D23f81c5";
-const FUNCTION_NAME = "eatGasAndFail";
-
-export const SimulateExample = () => {
+export const SimulateExampleWagmiViem = () => {
   const { writeContract } = useWriteContract();
 
   const handleWriteContract = async () => {
@@ -39,7 +36,7 @@ export const SimulateExample = () => {
         Here we use the <code>simulateContractWriteAndNotifyError</code> function to simulate the transaction before
         executing it.
       </p>
-      <p>
+      <p className="text-white">
         <code>simulateContractWriteAndNotifyError</code> calls simulateContract from wagmi, if it catches an error, it
         throws an error and sends a toast notif to the user.
       </p>
@@ -47,7 +44,7 @@ export const SimulateExample = () => {
         href="https://viem.sh/docs/contract/simulateContract#simulatecontract"
         target="_blank"
         rel="noopener noreferrer"
-        className="link mb-4"
+        className="link underline mb-4 text-white"
       >
         viem simulateContract Documentation
       </a>

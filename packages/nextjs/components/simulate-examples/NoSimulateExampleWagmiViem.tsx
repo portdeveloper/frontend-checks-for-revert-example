@@ -1,7 +1,7 @@
 import { useWriteContract } from "wagmi";
-import { YOUR_CONTRACT_ABI } from "~~/utils/abi";
+import { CONTRACT_ADDRESS, FUNCTION_NAME, YOUR_CONTRACT_ABI } from "~~/utils/abi";
 
-export const NoSimulateExample = () => {
+export const NoSimulateExampleWagmiViem = () => {
   const { writeContract } = useWriteContract();
 
   return (
@@ -12,7 +12,7 @@ export const NoSimulateExample = () => {
         href="https://wagmi.sh/react/api/hooks/useWriteContract#usewritecontract"
         target="_blank"
         rel="noopener noreferrer"
-        className="link mb-4"
+        className="link underline mb-4 text-white"
       >
         Wagmi useWriteContract Documentation
       </a>
@@ -21,8 +21,8 @@ export const NoSimulateExample = () => {
         onClick={() =>
           writeContract({
             abi: YOUR_CONTRACT_ABI,
-            address: "0xD64e4eC77812901a8b63826CA266f4C0D23f81c5",
-            functionName: "eatGasAndFail",
+            address: CONTRACT_ADDRESS,
+            functionName: FUNCTION_NAME,
           })
         }
       >
